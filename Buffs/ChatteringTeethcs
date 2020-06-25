@@ -1,0 +1,35 @@
+using static Terraria.ModLoader.ModContent;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace BoulderMod.Buffs
+{
+	public class ChatteringTeeth : ModBuff
+		public override void SetStaticDefaults() 
+		{
+			DisplayName.SetDefault("Chattering Teeth");
+            Description.SetDefault("They annoyingly chatter nonstop");
+		}
+
+		public override void update(Player player, ref int buffIndex) 
+		{
+			ThePlayer theplayer = player.GetModPlayer<ThePlayer>(mod);
+			if(player.ownedProjectileCounts[mod.ProjectileType("ChatteringTeeth")] > 0)
+			{
+				theplayer.summonChatteringTeeth = true;
+			}
+			if(!theplayer.summonChattering)
+			{
+				player.DelBuff(buffIndex);
+				buffIndex--;
+			}
+			else
+			{
+				player.buffTime[buffIndex] = 18000;
+			}
+        }
+	}
+}

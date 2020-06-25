@@ -1,0 +1,37 @@
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace BoulderMod.Items
+{
+	public class SuspiciousLookingNose : ModItem
+	{
+		public override void SetStaticDefaults() 
+		{
+			// DisplayName.SetDefault("JugglerGlove"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
+			Tooltip.SetDefault("Use during a blood moon...");
+		}
+
+		public override void SetDefaults() 
+		{
+			item.width = 12;
+			item.height = 12;
+			item.useTime = 15;
+			item.useAnimation = 15;
+			item.useStyle = 1;
+			item.value = 500;
+			item.rare = 4;
+			item.UseSound = SoundID.Item1;
+			item.autoReuse = false;
+		}
+
+		public override void AddRecipes() 
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.LifeforcePotion, 1);
+			recipe.AddIngredient(ItemID.LifeFruit, 1);
+			recipe.AddTile(TileID.WorkBenches);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
+	}
+}
