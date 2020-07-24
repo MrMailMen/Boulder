@@ -21,18 +21,18 @@ namespace BoulderMod.Tiles
             TileID.Sets.Ore[Type] = true;
             Main.tileSpelunker[Type] = true; // The tile will be affected by spelunker highlighting
             Main.tileValue[Type] = 110; // Metal Detector value, see https://terraria.gamepedia.com/Metal_Detector
-            Main.tileShine2[Type] = true; // Modifies the draw color slightly.
-            Main.tileShine[Type] = 975; // How often tiny dust appear off this tile. Larger is less frequently
+            //Main.tileShine2[Type] = true; // Modifies the draw color slightly.
+            //Main.tileShine[Type] = 975; // How often tiny dust appear off this tile. Larger is less frequently
             Main.tileMergeDirt[Type] = true;
             //Main.tileMergeStone[Type] = true;
             Main.tileSolid[Type] = true;
-            Main.tileBlockLight[Type] = false;
             dustType = 1;
             drop = ItemID.Coal;
             AddMapEntry(new Color(35, 35, 35));
             mineResist = 1f;
             minPick = 35;
             soundType = 21;
+            Main.tileBlockLight[Type] = true;
         }
     }
 }

@@ -21,7 +21,7 @@ namespace BoulderMod.Items
 			item.useAnimation = 9;
 			item.useStyle = 1;
 			item.knockBack = 7.5f;
-			item.value = 20000;
+			item.value = 200000;
 			item.rare = 6;
 			item.UseSound = SoundID.Item1;
 			item.autoReuse = true;

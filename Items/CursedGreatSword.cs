@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using static Terraria.ModLoader.PlayerHeadDrawInfo;
+
 namespace BoulderMod.Items
 {
 	public class CursedGreatSword : ModItem

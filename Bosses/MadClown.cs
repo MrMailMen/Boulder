@@ -68,7 +68,7 @@ namespace BoulderMod.Bosses
 
 		public override void ScaleExpertStats(int numPlayers, float bossLifeScale)
 		{
-			npc.lifeMax = ((int)(30000));
+			npc.lifeMax = ((int)(15000 + numPlayers * 15000));
 			damagemult = 1.3;
 			army = 2f;
 		}
@@ -135,8 +135,12 @@ namespace BoulderMod.Bosses
 			}
             if (timer == 301 || timer == 601 || timer == 901)
             {
-                mode = random.Next(1, 7);
-            }
+				mode = random.Next(1, 7);
+				if (Main.expertMode)
+				{
+					
+				}
+			}
             else if (timer > 1200)
             {
                 mode = 6;
@@ -199,7 +203,7 @@ namespace BoulderMod.Bosses
 					npc.damage = (int)(75 * damagemult);
 					npc.defense = 30;
 					speed = 15f;
-					accel = 0.5f;
+					accel = 0.75f;
 				}
 				else
 				{
@@ -214,7 +218,7 @@ namespace BoulderMod.Bosses
 					npc.damage = (int)(50 * damagemult);
 					npc.defense = 50;
 					speed = 12f;
-					accel = 0.25f;
+					accel = 0.5f;
 				}
 			}
 			else if (mode == 2) // Blocking (Defensive)
@@ -232,7 +236,7 @@ namespace BoulderMod.Bosses
 					npc.damage = (int)(40 * damagemult);
 					npc.defense = 100;
 					speed = 5f;
-					accel = 0.25f;
+					accel = 0.5f;
 				}
 				else
 				{
@@ -247,7 +251,7 @@ namespace BoulderMod.Bosses
 					npc.damage = (int)(20 * damagemult);
 					npc.defense = 120;
 					speed = 3f;
-					accel = 0.5f;
+					accel = 0.25f;
 				}
 			}
 			else if (mode == 3) // Jabbing (Offensive)
@@ -265,7 +269,7 @@ namespace BoulderMod.Bosses
 					npc.damage = (int)(100 * damagemult);
 					npc.defense = 10;
 					speed = 18f;
-					accel = 0.35f;
+					accel = 1.25f;
 				}
 				else
 				{
@@ -280,7 +284,7 @@ namespace BoulderMod.Bosses
 					npc.damage = (int)(75 * damagemult);
 					npc.defense = 30;
 					speed = 15f;
-					accel = 0.25f;
+					accel = 1f;
 				}
 			}
 			else if (mode == 4) // Juggling (Stands still and throws balls)
@@ -316,8 +320,8 @@ namespace BoulderMod.Bosses
 					accel = 0.02f;
 				}
 
-                if (timer == 1000 || timer == 1005 || timer == 1010 || timer == 1050 || timer == 1055 || timer == 1060 || timer == 200 || timer == 205 || timer == 210 || timer == 250 || timer == 255 || timer == 260 || timer == 400 || timer == 405 || timer == 410 || timer == 450 || timer == 455 || timer == 460 || timer == 500 || timer == 505 || timer == 510 || timer == 550 || timer == 555 || timer == 560 || timer == 700 || timer == 705 || timer == 710 || timer == 750 || timer == 755 || timer == 760 || timer == 800 || timer == 805 || timer == 810 || timer == 850 || timer == 855 || timer == 860)
-                {
+                if (timer == 400 || timer == 405 || timer == 410 || timer == 450 || timer == 455 || timer == 460 || timer == 500 || timer == 505 || timer == 510 || timer == 550 || timer == 555 || timer == 560 /**/ || timer == 700 || timer == 705 || timer == 710 || timer == 750 || timer == 755 || timer == 760 || timer == 800 || timer == 805 || timer == 810 || timer == 850 || timer == 855 || timer == 860 /**/ || timer == 1000 || timer == 1005 || timer == 1010 || timer == 1050 || timer == 1055 || timer == 1060 || timer == 1100 || timer == 1105 || timer == 1110 || timer == 1150 || timer == 1155 || timer == 1160)
+				{
                     Vector2 direction = npc.DirectionTo(player.Center); //thedirection
                     direction *= 7f;
                     Projectile.NewProjectile(npc.Center.X, npc.Center.Y, direction.X, direction.Y, mod.ProjectileType("JuggleBallEvil"), 30, 0f, Main.myPlayer, player.Center.X, player.Center.Y);
@@ -330,19 +334,19 @@ namespace BoulderMod.Bosses
 
 					frame = 13;
 
-					npc.damage = (int)(300 * damagemult);
+					npc.damage = (int)(150 * damagemult);
 					npc.defense = 10;
 					speed = 20f;
-					accel = 0.15f;
+					accel = 0.25f;
 				}
 				else
 				{
 					frame = 12;
 
-					npc.damage = (int)(200 * damagemult);
+					npc.damage = (int)(100 * damagemult);
 					npc.defense = 30;
 					speed = 18f;
-					accel = 0.1f;
+					accel = 0.125f;
 				}
 			}
 
@@ -355,7 +359,7 @@ namespace BoulderMod.Bosses
                     npc.damage = (int)(100 * damagemult);
                     npc.defense = 10;
                     speed = 10f;
-                    accel = 0.25f;
+                    accel = 0.35f;
                 }
                 else
                 {
@@ -364,7 +368,7 @@ namespace BoulderMod.Bosses
                     npc.damage = (int)(50 * damagemult);
                     npc.defense = 30;
                     speed = 8f;
-                    accel = 0.15f;
+                    accel = 0.25f;
                 }
 
                 if (targetPosition.Y - (npc.height / 2) < npc.position.Y && npc.velocity.Y > -speed)
@@ -398,9 +402,15 @@ namespace BoulderMod.Bosses
 
             npc.stepSpeed = npc.velocity.X;
 
-			if (!player.active || !Main.bloodMoon)
+			if (!Main.bloodMoon)
 			{
 				npc.noTileCollide = true;
+				npc.noGravity = false;
+			}
+			if (!player.active)
+			{
+				npc.noTileCollide = true;
+				npc.noGravity = false;
 			}
 
 			timer = timer + 1;

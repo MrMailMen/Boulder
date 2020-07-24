@@ -17,12 +17,12 @@ namespace BoulderMod.Items
 
 		public override void SetDefaults() 
 		{
-			item.damage = 34;
+			item.damage = 56;
 			item.melee = true;
 			item.width = 58;
 			item.height = 58;
-			item.useTime = 13;
-			item.useAnimation = 13;
+			item.useTime = 11;
+			item.useAnimation = 11;
 			item.useStyle = 1;
 			item.knockBack = 2.5f;
 			item.value = 40000;

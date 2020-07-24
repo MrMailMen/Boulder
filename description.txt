@@ -1,11 +1,5 @@
-Boulder is a content mod that as of now is pretty small. As of now, the content is very limited, but was made sure to be at least decent quality and roughly balanced for the tier you can get the items. Jist is right below, scroll all the way for a more in depth description. If you want a mod with a serious tone, this mod probably wouldn't fit very well as the mod is silly (while maintaining balance).
+Boulder is a content mod that as of now is pretty small. As of now, the content is limited, but was made sure to be at least decent quality and roughly balanced for the tier you can get the items.
 
-9 weapons
-1 accesory
-1 boss
-1 ore
-2 blocks
-1 crafting station
+Since the first update, the mod now has another early game boss and a hardmode biome that generates in the sky after defeating a mech boss. !WARNING! If there is a building in the far left of the world that you wish to keep, do not use this mod as it WILL overrite anything in that area. If you are uncertain, make a test world and defeat a mech boss in that world to see a preview of how it will generate.
 
-The mod introduces several weapons, 3 of which are hardmode upgrades to the fiery greatsword, 3 of which are hardmode upgrades to the muramasa, and 3 of which are drops from the new boss. The new boss is spawnable in early hardmode during a blood moon. In expert mode, it drops a powerful accesory, but it comes with a major drawback (and another less major drawback on top). It adds coal ore, which is a common ore that only generates right above the layer of hell, and can be used to make torches, or with a liquifier (a new crafting station), can be used to create oil. Oil can be crafted into rubber with a solidifier. I hope you don't have coulrophobia!
 

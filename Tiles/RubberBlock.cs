@@ -15,6 +15,7 @@ namespace BoulderMod.Tiles
             AddMapEntry(new Color(20, 20, 20));
             mineResist = 2f;
             minPick = 35;
+            Main.tileBlockLight[Type] = true;
         }
     }
 }
