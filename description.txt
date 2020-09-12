@@ -2,4 +2,6 @@ Boulder is a content mod that as of now is pretty small. As of now, the content 
 
 Since the first update, the mod now has another early game boss and a hardmode biome that generates in the sky after defeating a mech boss. !WARNING! If there is a building in the far left of the world that you wish to keep, do not use this mod as it WILL overrite anything in that area. If you are uncertain, make a test world and defeat a mech boss in that world to see a preview of how it will generate.
 
+Update: Removed crafting recipe for Duskmourne, as the weapon would be severely overpowered in it's stage of accesability. The weapon is still in progress, so it won't be obtainable until it is roughly finished.
+
 

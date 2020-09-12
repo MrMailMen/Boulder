@@ -34,15 +34,15 @@ namespace BoulderMod.Items
             item.shoot = mod.ProjectileType("Duskmourne");
         }
 
-		public override void AddRecipes() 
-		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(ItemID.CursedFlame, 30);
-            recipe.AddIngredient(ItemID.FieryGreatsword, 1);
-            recipe.AddTile(TileID.CrystalBall);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
-		}
+		//public override void AddRecipes() 
+		//{
+		//	ModRecipe recipe = new ModRecipe(mod);
+		//	recipe.AddIngredient(ItemID.CursedFlame, 30);
+        //  recipe.AddIngredient(ItemID.FieryGreatsword, 1);
+        //    recipe.AddTile(TileID.CrystalBall);
+		//	recipe.SetResult(this);
+		//	recipe.AddRecipe();
+		//}
 
         public override void OnHitNPC(Player player, NPC target, int damage, float knockback, bool crit)
         {
